@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="icon" href="images.png" type="image/x-icon">
+        <style>
+            
+        canvas
+        {
+            width: 99.8%;
+            height: 615px;
+        }
+        body
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+        </style>
+    </head>
+<body onkeydown="gamepage(event)"></body>
+
+<canvas id="myCanvas" width="1300" height="600" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+    var img = new Image();
+    var img2 = new Image();
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var string="Bug  Crossing";
+var string2="";
+var i=0;
+var changetextcolor=0;
+
+img.onload = function()
+{
+    ctx.drawImage(img,0,0);
+    ctx.font = "70px Arial";
+    ctx.fillStyle = " #ffff66";
+    ctx.fillText("Press ",460,200);
+    ctx.fillText("Enter",660,200);
+    ctx.fillText("to",600,300);
+    ctx.fillText("Start Game",460,400);
+}
+img.src="1380546974.png";
+typeWriter();
+setInterval(changecolor,100);
+// Create gradient
+var grd = ctx.createRadialGradient(650,500,5,650,500,900);
+grd.addColorStop(0,"red");
+grd.addColorStop(0.2,"orange");
+grd.addColorStop(0.4,"yellow");
+grd.addColorStop(0.6,"green");
+grd.addColorStop(1,"blue");
+// Fill with gradient
+ctx.fillStyle = grd;
+
+ctx.fillRect(0,0,1300,600);
+//////////
+ctx.fillStyle = "rgba(255, 255, 0, 1)";
+ctx.font = "50px Arial";
+function typeWriter() {
+  if (i <=string.length) {
+    ctx.fillStyle = "rgba(255, 255, 255, 1)";
+    ctx.fillText(string2,420,100);
+    string2+=string[i];
+    i++;
+    setTimeout(typeWriter, 200);
+  }
+}
+ctx.font = "70px Arial";
+ctx.fillStyle = "rgba(255, 255, 255, 1)";
+ctx.fillText("Press ",460,200);
+ctx.fillText("Enter",660,200);
+ctx.fillText("to",600,300);
+ctx.fillText("Start Game",460,400);
+/////////
+/*img.src="Bug-PNG-2.png";
+//////////////////////////////////////////////////////////////////////////////////////////////
+img2.src="1380546974.jpg";
+img.onload = function()
+{
+    ctx.drawImage(img2,0,0);
+}*/
+//////////////////////////////////////////////////////////////////////////////////////////////
+/*img.src="1380546974.jpg";
+img.onload = function()
+{
+    ctx.drawImage(img,0,0);
+}*/
+//////
+function changecolor()
+{
+    if(changetextcolor==0)
+    {
+        ctx.fillStyle = "rgba(255, 255, 255, 1)";
+        changetextcolor=1;
+    }
+    else if(changetextcolor==1)
+    {
+        ctx.fillStyle = "yellow";
+        changetextcolor=2;
+    }
+    else if(changetextcolor==2)
+    {
+        ctx.fillStyle = "rgba(255, 255, 255, 1)";
+        changetextcolor=0;
+    }
+    
+    ctx.fillText("Enter",660,200);
+}
+function gamepage(e)
+{  
+    if(e.keyCode == "13")//right
+    {
+        var win;
+        win = window.open('speeed - Copy.html','_self');
+    }      
+}
+</script>
+
+</body>
+</html>   

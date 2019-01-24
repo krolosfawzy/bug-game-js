@@ -1,0 +1,498 @@
+<html>
+    <head>
+        <title>crossse-__-</title>
+        <link rel="icon" href="images.png" type="image/x-icon">
+        <style>
+            canvas
+            {
+                margin-left: 51%;
+                margin-top: 4%;
+                float: left;
+            }
+            img
+            {    
+                display: block;
+            }
+            #heart0
+            {
+                margin-top: 4%;
+            }
+            body
+            {
+                background-image:url("ABugsLife_Photo_07.jpg");
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body onload="draw()" onkeydown="load(event)" >
+           <center> <span id="span"></span> </center>
+        <canvas id="myCanvas" width="600" height="500">
+            Your browser does not support the HTML5 canvas tag -_-.</canvas>
+
+            <img src="red-heart.png" id="heart0">
+            <img src="red-heart.png" id="heart1">
+            <img src="red-heart.png" id="heart2">
+            <audio id="myVideo" controls style="display:none">
+                    <source src="Apple.mp4" type="audio/mp4">
+            </audio>
+            <audio id="myVideo1" controls style="display:none">
+                    <source src="BURPBELCH .mp4" type="audio/mp4">
+            </audio>
+
+            <script>
+                var img = new Image();
+                var img1 = new Image();
+                var img2 = new Image();
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                var xbug=300;
+                var ybug=400;
+                var widthObject2=0;
+                var heightObject2=0;
+                var xObjectDamge2=0;
+                var widthObject3=0;
+                var heightObject3=0;
+                var xObjectDamge3=0;
+                var xOjectDamge=0;
+                var colorxstart1=5;
+                var colorxend1=60;
+                var colorxstart2=5;
+                var colorxend2=60;
+                var colorxstart3=5;
+                var colorxend3=60;
+                var counterheart=2;
+                var eate1=1;
+				var eate2=1;
+				var eate3=1;
+                var die1=1;
+				var die2=1;
+				var die3=1;
+				var counter=0;
+                ////////
+                randomtime();
+                randomtime2();
+                var drawobject1move=setInterval(sharps,100);
+                //var grd = ctx.createRadialGradient(5,50,5,60,50,60);
+                var grd;
+                var grd2;
+                var grd3;
+                //////////show game
+                function draw()
+                {
+                    grd = ctx.createRadialGradient(colorxstart1,250,5,colorxend1,250,60);
+                    grd.addColorStop(0,"red");
+                    grd.addColorStop(0.2,"orange");
+                    grd.addColorStop(0.4,"yellow");
+                    grd.addColorStop(0.6,"orange");
+                    grd.addColorStop(1,"white");
+                    ////
+                    grd2=ctx.createRadialGradient(colorxstart2,350,5,colorxend2,350,60);
+                    grd2.addColorStop(0,"red");
+                    grd2.addColorStop(0.2,"orange");
+                    grd2.addColorStop(0.4,"yellow");
+                    grd2.addColorStop(0.6,"orange");
+                    grd2.addColorStop(1,"white");
+                    ////
+                    grd3=ctx.createRadialGradient(colorxstart3,150,5,colorxend3,150,60);
+                    grd3.addColorStop(0,"red");
+                    grd3.addColorStop(0.2,"orange");
+                    grd3.addColorStop(0.4,"yellow");
+                    grd3.addColorStop(0.6,"orange");
+                    grd3.addColorStop(1,"white");
+                    ////
+                    img.src="Bug-PNG-2.png";
+                    img1.src="2057fa3707ca426.png";
+                    ctx.fillStyle = "#779d30";
+                    ctx.fillRect(0, 0, 100, 100);
+                    ctx.fillStyle = "#c4d563";
+                    ctx.fillRect(100, 0, 100, 100);
+                    ctx.fillStyle = "#779d30";
+                    ctx.fillRect(200, 0, 100, 100);
+                    ctx.fillStyle = "#c4d563";
+                    ctx.fillRect(300, 0, 100, 100);
+                    ctx.fillStyle = "#779d30";
+                    ctx.fillRect(400, 0, 100, 100);
+                    ctx.fillStyle = "#c4d563";
+                    ctx.fillRect(500, 0, 100, 100);
+                    ///////////////////secnd row
+                    ctx.fillStyle = "rgba(255, 255, 255, 1)";
+                    ctx.fillRect(0, 100, 100, 100);
+                    ctx.fillRect(100, 100, 100, 100);
+                    ctx.fillRect(200, 100, 100, 100);
+                    ctx.fillRect(300, 100, 100, 100);
+                    ctx.fillRect(400, 100, 100, 100);
+                    ctx.fillRect(500, 100, 100, 100);
+                    //////////////////third row
+                    ctx.fillStyle = "rgba(255, 255, 255, 1)";
+                    ctx.fillRect(0, 200, 100, 100);
+                    ctx.fillRect(100, 200, 100, 100);
+                    ctx.fillRect(200, 200, 100, 100);
+                    ctx.fillRect(300, 200, 100, 100);
+                    ctx.fillRect(400, 200, 100, 100);
+                    ctx.fillRect(500, 200, 100, 100);
+                    /////////////////fourd row
+                    ctx.fillRect(0, 300, 100, 100);
+                    ctx.fillRect(100, 300, 100, 100);
+                    ctx.fillRect(200, 300, 100, 100);
+                    ctx.fillRect(300, 300, 100, 100);
+                    ctx.fillRect(400, 300, 100, 100);
+                    ctx.fillRect(500, 300, 100, 100);
+                    ////////////////
+                    ctx.fillStyle = "rgba(0, 128, 255, 1)";
+                    ctx.fillStyle = grd;
+                    ctx.fillRect(xOjectDamge, 200, 100, 100);
+                    ctx.fillStyle = grd2;
+                    ctx.fillRect(xObjectDamge2, 300, widthObject2,heightObject2);
+                    ctx.fillStyle = grd3;
+                    ctx.fillRect(xObjectDamge3, 100, widthObject3,heightObject3);
+                    /////////////////fithe row
+                    ctx.fillStyle = "#779d30";
+                    ctx.fillRect(0, 400, 100, 100);
+                    ctx.fillStyle = "#c4d563";
+                    ctx.fillRect(100, 400, 100, 100);
+                    ctx.fillStyle = "#779d30";
+                    ctx.fillRect(200, 400, 100, 100);
+                    ctx.fillStyle = "#c4d563";
+                    ctx.fillRect(300, 400, 100, 100);
+                    ctx.fillStyle = "#779d30";
+                    ctx.fillRect(400, 400, 100, 100);
+                    ctx.fillStyle = "#c4d563";
+                    ctx.fillRect(500, 400, 100, 100);
+                    ctx.fillStyle = "#779d30";
+                    ctx.fillRect(600, 400, 100, 100);
+                    //ctx.fillRect(450, 0, 150, 150);
+                    img1.onload = function()///food
+                    {
+						if(eate1==1)
+						{
+							ctx.drawImage(img1,100,100);
+						}
+						if(eate2==1)
+						{
+							ctx.drawImage(img1,300,300);
+						}
+						if(eate3==1)
+						{
+							ctx.drawImage(img1,500,200);
+						}
+						ctx.drawImage(img,xbug,ybug);
+                    }
+                    endGame();
+                    crash();
+                }
+                //////////////////move bug
+                function load(e)
+                {
+                    if(e.keyCode == "39" && xbug < 500)//right
+                    {
+                        xbug+=100; 
+                    }
+                    else if(e.keyCode == "37" && xbug > 0)//left
+                    {
+                        xbug-=100; 
+                    }
+                    else if(e.keyCode == "38" && ybug > 0)//up
+                    {
+                        ybug-=100; 
+                    }
+                    else if(e.keyCode == "40" && ybug < 400)//down
+                    {
+                        ybug+=100; 
+                    }
+                    /*if(xbug==100&&ybug==100)
+					{
+						eate1=0;
+					}
+					if(xbug==300&&ybug==300)
+					{
+						eate2=0;
+					}
+					if(xbug==500&&ybug==200)
+					{
+						eate3=0;
+					}*/
+                    var vid = document.getElementById("myVideo");
+					if(xbug==100&&ybug==100)
+					{	
+						if(die1==1)
+						{
+							eate1=0;
+							counter++;
+							if(counter)
+							{
+							}
+							vid.play();
+							die1=0;
+						}
+						else
+						{
+							vid.pause();
+						}
+					}
+					if(xbug==300&&ybug==300)
+					{
+						if(die2==1)
+						{
+							eate2=0;
+							vid.play();
+							counter++;
+							die2=0;
+						}
+						else
+						{
+							vid.pause();
+						}
+					}
+					if(xbug==500&&ybug==200)
+					{
+						if(die3==1)
+						{
+							eate3=0;
+							vid.play();
+							counter++;
+							die3=0;
+						}
+						else
+						{
+							vid.pause();
+						}
+					}
+					if(counter==3)
+					{
+						var vid1=document.getElementById("myVideo1");
+						vid1.play();
+						counter=0;
+					}
+                    //draw();
+                }
+                ////////// move object damge 1
+                function sharps()
+                {   
+                    if(xOjectDamge!=650)
+                    {
+                        colorxend1+=10;
+                        colorxstart1+=10;
+                        xOjectDamge+=10;
+                        draw();
+                    }
+                    else
+                    {
+                        if(counterheart>=0)
+                        {
+                            colorxend1=60;
+                            colorxstart1=5;
+                            xOjectDamge=0;
+                        }
+                        else if(counterheart<0 || timeLimte==120)
+                        {
+
+                            endGame();
+                            clearInterval(drawobject1move);
+                        }
+                    }
+                    
+                }
+                ////////show object damge 2
+                var showObjectDamge2Loop;
+                function showObjectDamge2()
+                {
+                    widthObject2=100;
+                    heightObject2=100;
+                    showObjectDamge2Loop=setInterval(sharps2,100);
+                }
+                ////////show object damge 3
+                var showObjectDamge3Loop;
+                function showObjectDamge3()
+                {
+                    widthObject3=100;
+                    heightObject3=100;
+                    showObjectDamge3Loop=setInterval(sharps3,100);
+                }
+                ///////////////move object damge 2
+                function sharps2()
+                {
+                    if(xObjectDamge2!=650)
+                    {
+                        colorxend2+=10;
+                        colorxstart2+=10;
+                        xObjectDamge2+=10;
+                        //draw();
+                    }
+                    else
+                    {
+                        clearInterval(showObjectDamge2Loop);
+                        if(counterheart>=0)
+                        {
+                            colorxend2=60;
+                            colorxstart2=5;
+                            xObjectDamge2=0;
+                            widthObject2=0;
+                            heightObject2=0;
+                            randomtime();
+                        }
+                        else if(counterheart<0 || timeLimte==120)
+                        {
+                            endGame();
+                        }
+                    }
+                }
+                ///////////////move object damge 3
+                function sharps3()
+                {
+                    if(xObjectDamge3!=650)
+                    {
+                        colorxend3+=10;
+                        colorxstart3+=10;
+                        xObjectDamge3+=10;
+                        //draw();
+                    }
+                    else
+                    {
+                        clearInterval(showObjectDamge3Loop);
+                        if(counterheart>=0)
+                        {
+                            colorxend3=60;
+                            colorxstart3=5;
+                            xObjectDamge3=0;
+                            widthObject3=0;
+                            heightObject3=0;
+                            randomtime2();
+                        }
+                        else if(counterheart<0 || timeLimte==120)
+                        {
+                            endGame();
+                        }
+                    }
+                }
+                /////////////////  generate random time
+                function randomtime()
+                {
+                    /////random time to show object damge
+                    var showTimeObject2=Math.random();
+                    showTimeObject2=parseInt((showTimeObject2.toFixed(1)*1000));
+                    setTimeout(showObjectDamge2,showTimeObject2);
+                }
+                /////////////////  generate random time2
+                function randomtime2()
+                {
+                    /////random time to show object damge
+                    var showTimeObject3=Math.random();
+                    showTimeObject3=parseInt((showTimeObject3.toFixed(1)*1000));
+                    setTimeout(showObjectDamge3,showTimeObject3);
+                }
+                ///////////make action when crash bug with object1,object2
+                function crash()
+                {
+                    xchangeOject=xOjectDamge+90;
+                    xchangeOject2=xObjectDamge2+90;
+                    xchangeOject3=xObjectDamge3+90;
+                    xchangebug=xbug+110;
+                    if(xOjectDamge<xbug && xbug<xchangeOject && ybug==200 || xOjectDamge>xbug && xOjectDamge<xchangebug && ybug==200)
+                    {
+                        /*img.src="bug_thumb.jpg";
+                        img.onload = function()
+                        {
+                            ctx.drawImage(img,xbug,ybug);
+                        }*/
+                        if(counterheart>=0)
+                        {
+                            document.getElementById("heart"+counterheart).src="white-heart.png";
+                            counterheart--;
+                            xbug=300;
+                            ybug=400;
+                        }
+                    }
+                    else if(xObjectDamge2<xbug && xbug<xchangeOject2 && ybug==300 || xObjectDamge2>xbug && xObjectDamge2<xchangebug &&ybug==300)
+                    {
+                        if(counterheart>=0)
+                        {
+                            document.getElementById("heart"+counterheart).src="white-heart.png";
+                            counterheart--;
+                            xbug=300;
+                            ybug=400;
+                        }
+                    }
+                    else if(xObjectDamge3<xbug && xbug<xchangeOject3 && ybug==100 || xObjectDamge3>xbug && xObjectDamge3<xchangebug &&ybug==100)
+                    {
+                        if(counterheart>=0)
+                        {
+                            document.getElementById("heart"+counterheart).src="white-heart.png";
+                            counterheart--;
+                            xbug=300;
+                            ybug=400;
+                        }
+                    }
+                }
+                ///////////////time game
+                timeLimte=0;
+                nummm=setInterval(timeupdate,200);
+                function timeupdate()
+                {
+                    if(timeLimte<120)
+                    {
+                        timeLimte++;
+                        document.getElementById("span").innerHTML=timeLimte+"s"+"/120s";
+                    }    
+                    else
+                    {
+                        clearInterval(nummm);
+                    }    
+                }
+                function endGame()
+                {
+                    if(counterheart<0 || timeLimte==120)
+                    {
+
+                        ctx.fillStyle = "rgba(255, 255, 255, 1)";
+                        ctx.fillRect(0, 0, 600, 500);
+                        ctx.fillStyle = "rgba(0, 0, 0, 1)";
+                        ctx.font = "100px Arial";
+                        ctx.fillText("game over",50,200);
+                        clearInterval(drawobject1move);
+                        clearInterval(showObjectDamge2Loop);
+                        clearInterval(showObjectDamge3Loop);
+                        clearInterval(nummm);
+                        img.src="bug_thumb.png";
+                        /*ctx.fillStyle = "rgba(255, 255, 255, 1)";
+                        ctx.fillRect(300, 400, 200, 100);*/
+                        img.onload = function()
+                        {
+							ctx.drawImage(img,200,200);
+						}
+
+                    }
+                    else if(ybug==0 && eate1==0  && eate2==0 && eate3==0)
+                    {
+                        ctx.fillStyle = "rgba(255, 255, 255, 1)";
+                        ctx.fillRect(0, 0, 600, 500);
+                        ctx.fillStyle = "rgba(0, 0, 0, 1)";
+                        ctx.font = "100px Arial";
+                        ctx.fillText("Win",200,200);
+                        clearInterval(drawobject1move);
+                        clearInterval(showObjectDamge2Loop);
+                        clearInterval(showObjectDamge3Loop);
+                        clearInterval(nummm);
+                        img.src="images (2).png";
+                        /*ctx.fillStyle = "rgba(255, 255, 255, 1)";
+                        ctx.fillRect(300, 400, 200, 100);*/
+                        img.onload = function()
+                        {
+							ctx.drawImage(img,150,200);
+						}
+                        
+                    }
+                        
+                    /*else if()
+                    {
+
+                    }*/
+                    
+                }
+                
+            </script>
+    </body> 
+</html>
